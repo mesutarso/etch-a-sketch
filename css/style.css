@@ -1,0 +1,12 @@
+:root {
+    
+    --border: #222;
+  }
+.grid{
+    display:grid;
+    display: grid;
+    max-width: 500px;
+    min-height: 500px;
+    margin: 2rem auto;
+    border: 2px solid var(--border);
+}
