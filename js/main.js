@@ -38,8 +38,10 @@ function changeColor(e) {
   e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
 }
 
-function changeSize() {
+function changeSize(e) {
+  e.preventDefault();
   let newSize = sizeNumber;
+  console.log(newSize);
 
   if (newSize !== null) {
     newSize = parseInt(newSize);
