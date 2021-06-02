@@ -10,3 +10,11 @@
     margin: 2rem auto;
     border: 2px solid var(--border);
 }
+.grid-element {
+    border: 1px solid #ededed;
+    background-color: #222;
+  }
+
+.hide{
+    display:none;
+}

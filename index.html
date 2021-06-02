@@ -28,11 +28,17 @@
       <div class="row changeSize justify-content-center">
         <button
           type="button"
-          class="btn btn-primary col-3 text-center"
+          class="btn btn-primary col-3 text-center mx-2"
           data-bs-toggle="modal"
           data-bs-target="#ajoutTaille"
         >
           Modifier le tableau
+        </button>
+        <button
+          type="button"
+          class="reset btn btn-danger col-3 text-center mx-2"
+        >
+          Reinitialiser le tableau
         </button>
         <div
           class="modal fade"
@@ -55,9 +61,9 @@
                 ></button>
               </div>
               <div class="modal-body">
-                  <div class="alert alert-danger">
-                      <p id="alert"></p>
-                  </div>
+                <div class="alert alert-danger">
+                  <p id="alert"></p>
+                </div>
                 <form action="" id="formulaire">
                   <input
                     type="number"
@@ -71,6 +77,8 @@
                     value="Changer"
                     class="form-control btn btn-success my-2"
                     id="resetSize"
+                    data-bs-toggle="modal"
+                    data-bs-target="#ajoutTaille"
                   />
                 </form>
               </div>

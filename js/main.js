@@ -2,6 +2,8 @@ const gridContainer = document.querySelector("#grid-tableau");
 const form = document.getElementById("formulaire");
 const resetSize = document.querySelector("#resetSize");
 const alert = document.querySelector("#alert");
+const reset = document.querySelector(".reset");
+const modal = document.getElementById("ajoutTaille");
 
 let sizeNumber;
 form.addEventListener("input", (e) => {
@@ -11,7 +13,20 @@ form.addEventListener("input", (e) => {
 });
 
 window.addEventListener("load", setDefaultGrid);
-resetSize.addEventListener("click", changeSize);
+resetSize.addEventListener("click", (e) => {
+  e.preventDefault();
+    changeSize();
+    modal.style.display = "none";
+  
+});
+reset.addEventListener("click", (e) => {
+  clearGrid();
+  if (sizeNumber) {
+    changeSize();
+  } else {
+    setDefaultGrid();
+  }
+});
 
 function setDefaultGrid() {
   setGridSize(16);
@@ -38,16 +53,13 @@ function changeColor(e) {
   e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
 }
 
-function changeSize(e) {
-  e.preventDefault();
+function changeSize() {
   let newSize = sizeNumber;
-  console.log(newSize);
 
   if (newSize !== null) {
     newSize = parseInt(newSize);
     if (newSize < 1 || newSize > 64 || Number.isNaN(newSize)) {
       alert.textContent = "Enter a number from 1-64 range";
-      changeSize();
     } else {
       clearGrid();
       setGridSize(newSize);
