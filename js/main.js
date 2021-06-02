@@ -15,9 +15,7 @@ form.addEventListener("input", (e) => {
 window.addEventListener("load", setDefaultGrid);
 resetSize.addEventListener("click", (e) => {
   e.preventDefault();
-    changeSize();
-    modal.style.display = "none";
-  
+  changeSize();
 });
 reset.addEventListener("click", (e) => {
   clearGrid();
